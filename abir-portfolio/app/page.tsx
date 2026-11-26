@@ -64,9 +64,7 @@ function BrandMark() {
   return (
     <span className="brand-mark" aria-hidden="true">
       <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11.75 45L19.25 19L26.75 45" stroke="#e6dcff" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M14.5 36.5H24" stroke="#b49aff" strokeWidth="4.2" strokeLinecap="round"/>
-        <path d="M34.75 45V19L43.5 35L52.25 19V45" stroke="#e6dcff" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <text x="32" y="43" textAnchor="middle" fill="#e6dcff" fontFamily="Arial, sans-serif" fontSize="23" fontWeight="800" letterSpacing="-2">AM</text>
       </svg>
     </span>
   );
