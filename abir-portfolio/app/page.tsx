@@ -60,6 +60,18 @@ function ProjectVisual({ kind }: { kind: string }) {
   );
 }
 
+function BrandMark() {
+  return (
+    <span className="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.75 45L19.25 19L26.75 45" stroke="#e6dcff" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14.5 36.5H24" stroke="#b49aff" strokeWidth="4.2" strokeLinecap="round"/>
+        <path d="M34.75 45V19L43.5 35L52.25 19V45" stroke="#e6dcff" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </span>
+  );
+}
+
 function SectionHeading({ index, eyebrow, title, note }: { index: string; eyebrow: string; title: string; note?: string }) {
   return <div className="section-heading"><div><span className="section-index">{index} / {eyebrow}</span><h2>{title}</h2></div>{note && <p>{note}</p>}</div>;
 }
@@ -71,7 +83,7 @@ export default function Home() {
   return (
     <main>
       <div className="ambient ambient-one"/><div className="ambient ambient-two"/>
-      <header className="site-header"><a className="brand" href="#top" aria-label="Abir Mondal home"><span className="brand-mark">a<span>.</span></span><span>ABIR MONDAL</span></a>
+      <header className="site-header"><a className="brand" href="#top" aria-label="Abir Mondal home"><BrandMark /><span>ABIR MONDAL</span></a>
         <nav className={menuOpen ? "nav-links open" : "nav-links"}>{nav.map(item=><a key={item.href} href={item.href} onClick={closeMenu}>{item.label}</a>)}<a className="nav-contact" href="#contact" onClick={closeMenu}>Let's talk <ArrowUpRight size={14}/></a></nav>
         <button className="menu-toggle" onClick={()=>setMenuOpen(!menuOpen)} aria-label={menuOpen?"Close menu":"Open menu"}>{menuOpen?<X/>:<Menu/>}</button>
       </header>
@@ -103,7 +115,7 @@ export default function Home() {
 
       <section className="contact-section section-wrap" id="contact"><div className="contact-panel"><div className="contact-glow"/><div className="contact-content"><span className="section-index">05 / WHAT'S NEXT</span><h2>Have something<br/><span className="muted-title">interesting in mind?</span></h2><p>I'm open to connecting about software engineering opportunities, interesting projects and ideas worth building.</p><div className="hero-actions"><a className="button button-primary" href={profile.linkedin} target="_blank" rel="noreferrer">Connect on LinkedIn <ArrowUpRight size={17}/></a><a className="button button-quiet" href={`mailto:${profile.email}`}>Email me <Mail size={16}/></a></div></div><div className="contact-decoration"><div className="contact-symbol">↗</div><span>LET'S BUILD<br/>SOMETHING USEFUL</span></div></div></section>
 
-      <footer className="site-footer section-wrap"><a className="brand" href="#top"><span className="brand-mark">a<span>.</span></span><span>ABIR MONDAL</span></a><span className="footer-note">Designed & built with intent.</span><div className="footer-links"><a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17}/></a><a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17}/></a><a href={`mailto:${profile.email}`} aria-label="Email"><Mail size={17}/></a></div><span className="copyright">© {new Date().getFullYear()} Abir Mondal</span></footer>
+      <footer className="site-footer section-wrap"><a className="brand" href="#top"><BrandMark /><span>ABIR MONDAL</span></a><span className="footer-note">Designed & built with intent.</span><div className="footer-links"><a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17}/></a><a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17}/></a><a href={`mailto:${profile.email}`} aria-label="Email"><Mail size={17}/></a></div><span className="copyright">© {new Date().getFullYear()} Abir Mondal</span></footer>
     </main>
   );
 }
